@@ -1,0 +1,170 @@
+:root{
+
+    --Background :hsl(233, 47%, 7%);
+    --Card-Background: hsl(244, 38%, 16%);
+    --Accent-Image:  hsl(277, 94%, 34%);
+    --Accent:  hsl(277, 61%, 54%);
+    --Main-Paragraph:  hsla(0, 0%, 100%, 0.75);
+    --Stat-Headings: hsla(0, 0%, 100%, 0.6);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--Background);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2%;
+}
+
+main{
+    width: 100%;
+    background-color: var(--Card-Background);
+    padding-bottom: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image"
+                         "content";
+}
+
+.image{
+    position: relative;
+    grid-area: image;
+    background-color: var(--Accent);
+}
+
+
+.image img{
+    width: 100%;
+    mix-blend-mode: multiply;
+}
+
+main, .image, .overlay, .image img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* ====== CONTENT STYLES ====== */
+
+.content{
+    padding: 0 2em;
+    font-family: 'Inter', sans-serif;
+    grid-area: content;
+}
+
+
+h1{
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.accent{
+    color: var(--Accent);
+}
+
+.content__description p{
+    color: var(--Main-Paragraph);
+    text-align: center;
+    margin-top: 0;
+    line-height: 25px;
+    margin-bottom: 35px;
+}
+
+
+.companies, .templates, .queries{
+    font-family: 'Lexend Deca', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2{
+    margin: 0;
+    color: white;
+    margin-bottom: 7px;
+    font-family: 'Inter', sans-serif;
+}
+
+.companies p, .templates p, .queries p{
+    color: var(--Stat-Headings);
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* ====== MEDIA QUERYS ====== */
+
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 1200px) {
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "content image";
+        padding-bottom: 0;
+        border-radius: 10px;
+    }
+
+    .content{
+        padding: 10%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "title title title"
+                              "description description description"         
+                              "companies templates queries" ;
+    }
+
+    .content__title{
+        grid-area: title;
+    }
+
+    .content__description{
+        grid-area: description;
+    }
+
+
+
+    .content h1{
+        font-size: 40px;
+        text-align: start;
+    }
+
+
+    
+    .content__description p{
+        text-align: start;
+        font-size: 20px;
+    }
+
+
+     .image, .overlay, .image img{
+        border-top-left-radius: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+  
+}
+
