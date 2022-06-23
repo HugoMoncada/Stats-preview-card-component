@@ -168,3 +168,20 @@ h2{
   
 }
 
+@media only screen and (min-width: 1600px) {
+
+    .content h1{
+        font-size: 60px;
+        text-align: start;
+    }
+
+       
+    .content__description p{
+        font-size: 22px;
+    }
+
+    .companies, .templates, .queries{
+        font-size: 20px;
+    }
+}
+
